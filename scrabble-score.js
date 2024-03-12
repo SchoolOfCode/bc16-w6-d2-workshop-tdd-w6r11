@@ -34,14 +34,10 @@ export function calculateScrabbleScore(word) {
   // find the letter and the score - done
   // reasign the score variable - done
   // return the score updated - done
-
   let score = 0;
   for (let letter of word.toUpperCase()) {
     const letterScore = letterScores.find(([item]) => item === letter);
     score += letterScore[1];
   }
-
-  console.log(score);
-
   return score;
 }

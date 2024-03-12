@@ -38,3 +38,30 @@ const letterScore = [
 test.each(letterScore)("%s should have a score of %i", (word, expectScore) => {
   expect(calculateScrabbleScore(word)).toBe(expectScore);
 });
+
+const words = [
+  ["planet", 8],
+  ["quartz", 24],
+  ["bright", 12],
+  ["jockey", 22],
+  ["zephyr", 23],
+  ["widget", 11],
+  ["crux", 13],
+  ["glyph", 14],
+  ["voyage", 13],
+  ["knight", 14],
+  ["jungle", 14],
+  ["flint", 8],
+  ["magnet", 9],
+  ["quiver", 18],
+  ["hazard", 19],
+  ["syntax", 16],
+  ["vortex", 16],
+  ["whisky", 19],
+  ["bounce", 10],
+  ["zodiac", 18],
+];
+
+test.each(words)("%s should have a score of %i", (word, expectedScore) => {
+  expect(calculateScrabbleScore(word)).toBe(expectedScore);
+});

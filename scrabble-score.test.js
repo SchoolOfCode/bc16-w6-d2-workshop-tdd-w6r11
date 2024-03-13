@@ -65,3 +65,18 @@ const words = [
 test.each(words)("%s should have a score of %i", (word, expectedScore) => {
   expect(calculateScrabbleScore(word)).toBe(expectedScore);
 });
+
+
+test("Function should throw error if not A-Z", () => {
+  // Define a function that will execute the target code
+  const executeWithInvalidInput = () => calculateScrabbleScore("%$TH1SW0RD");
+  
+  // Expect that executing the function with invalid input throws an error
+  expect(executeWithInvalidInput).toThrowError("Invalid character found");
+});
+
+
+test("Seven letter word should return +50 bonus points", () => {
+  const expectedScore = 11
+  expect(calculateScrabbleScore("Supreme")).toBe(expectedScore + 50)
+})
